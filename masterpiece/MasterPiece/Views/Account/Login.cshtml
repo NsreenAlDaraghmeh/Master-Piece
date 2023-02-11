@@ -1,0 +1,154 @@
+﻿@using MasterPiece.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>eCommerce HTML-5 Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="~/two/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="~/two/assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    @*<link rel="stylesheet" href="~/two/assets/css/bootstrap.min.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/owl.carousel.min.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/flaticon.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/slicknav.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/animate.min.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/magnific-popup.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/fontawesome-all.min.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/themify-icons.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/slick.css">*@
+    @*<link rel="stylesheet" href="~/two/assets/css/nice-select.css">*@
+    <link rel="stylesheet" href="~/two/assets/css/style.css">
+</head>
+<!-- slider Area Start-->
+<div class="slider-area ">
+    <!-- Mobile Menu -->
+    <div class="single-slider slider-height2 d-flex align-items-center" style=" background-image:url(../../assets/img/gallery/11.jpeg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider Area End-->
+<!--================login_part Area =================-->
+<section class="login_part section_padding ">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_text text-center">
+                    <div class="login_part_text_iner">
+                        <h2>New to our Shop?</h2>
+                        <p>
+                            There are advances being made in science and technology
+                            everyday, and a good example of this is the
+                        </p>
+                        <a href="/Account/Register" class="btn_3">Create an Account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <h3>
+                                Welcome Back ! <br>
+                                Please Sign in now
+                            </h3>
+                            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.RememberMe)
+                                            @Html.LabelFor(m => m.RememberMe)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Log in" class="btn btn-primary" style="background-color:burlywood;" />
+                                    </div>
+                                </div>
+                                <p>
+                                    @Html.ActionLink("Register as a new user", "Register")
+                                </p>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>
+<!-- All JS Custom Plugins Link Here here -->
+<script src="~/two/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
+<!-- Jquery, Popper, Bootstrap -->
+<script src="~/two/assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="~/two/assets/js/popper.min.js"></script>
+<script src="~/two/assets/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="~/two/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="~/two/assets/js/owl.carousel.min.js"></script>
+<script src="~/two/assets/js/slick.min.js"></script>
+
+<!-- One Page, Animated-HeadLin -->
+<script src="~/two/assets/js/wow.min.js"></script>
+<script src="~/two/assets/js/animated.headline.js"></script>
+
+<!-- Scrollup, nice-select, sticky -->
+<script src="~/two/assets/js/jquery.scrollUp.min.js"></script>
+<script src="~/two/assets/js/jquery.nice-select.min.js"></script>
+<script src="~/two/assets/js/jquery.sticky.js"></script>
+<script src="~/two/assets/js/jquery.magnific-popup.js"></script>
+
+<!-- contact js -->
+<script src="~/two/assets/js/contact.js"></script>
+<script src="~/two/assets/js/jquery.form.js"></script>
+<script src="~/two/assets/js/jquery.validate.min.js"></script>
+<script src="~/two/assets/js/mail-script.js"></script>
+<script src="~/two/assets/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->
+<script src="~/two/assets/js/plugins.js"></script>
+<script src="~/two/assets/js/main.js"></script>
+@*<div class="col-md-4">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>*@
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
